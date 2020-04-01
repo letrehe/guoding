@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     登陆成功,欢迎您<label th:text="${session.loginAccount.username}">XXX</label>用户
+
+<table align="center">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>邮箱</th>
+    </tr>
+    <tr th:each="account:${accountlist}">
+        <td th:text="${account.id}">id</td>
+        <td th:text="${account.username}">name</td>
+        <td th:text="${account.password}">password</td>
+        <td th:text="${account.age}">age</td>
+        <td th:text="${account.gender}">gender</td>
+        <td th:text="${account.email}">email</td>
+    </tr>
+</table>
+</body>
+</html>
